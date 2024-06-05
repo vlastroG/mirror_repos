@@ -6,6 +6,8 @@
 2. Добавить токет для пуша на gitlab в секрет "gitlab_secret" docker:
 ```
     docker swarm init
+```
+```
     echo gitlab_token_value | docker secret create gitlab_secret -
 ```
 4. Собрать image:
