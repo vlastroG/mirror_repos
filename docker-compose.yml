@@ -1,0 +1,8 @@
+services:
+    mirror_repos:
+        image: mirror-test
+        secrets:
+            - gitlab_secret
+secrets:
+    gitlab_secret:
+        external: true
