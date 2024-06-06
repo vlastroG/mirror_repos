@@ -11,7 +11,7 @@
 ```
     echo gitlab_token_value | docker secret create push_secret -
 ```
-4. Собрать image:
+4. Собрать image ./src:
 ```
     docker build -t mirror-test .
 ```
