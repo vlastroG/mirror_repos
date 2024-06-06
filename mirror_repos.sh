@@ -1,7 +1,10 @@
 #!/bin/bash
-TOKEN="$(cat /run/secrets/gitlab_secret)"
+#get only first line
+TOKEN="$(head -n 1 /run/secrets/gitlab_secret)"
 #remove fucking trailing characters
 TOKEN="${TOKEN//$'\r'/}"
+#remove spaces
+TOKEN="${TOKEN//$' '/}"
 
 #only push current branch
 git config --global push.default simple
@@ -10,7 +13,7 @@ while read l; do
     SOURCE_REPO=${REPOS[0]}
     echo SOURCE_REPO: $SOURCE_REPO
     DESTINATION_REPO=${REPOS[1]}
-	echo DESTINATION_REPO: $DESTINATION_REPO
+    echo DESTINATION_REPO: $DESTINATION_REPO
     # replace "gitlab" to "oauth2:$TOKEN@gitlab"
     ACCESS_STRING="oauth2:$TOKEN@gitlab"
     DESTINATION_REPO="${DESTINATION_REPO/gitlab/"$ACCESS_STRING"}"
