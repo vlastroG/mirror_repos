@@ -2,7 +2,13 @@ services:
     mirror_repos:
         image: mirror-test
         secrets:
-            - gitlab_secret
+            - push_token
+        volumes:
+            - ./data:/app/data
 secrets:
-    gitlab_secret:
+    push_token:
+        external: true
+
+volumes:
+    app-data:
         external: true

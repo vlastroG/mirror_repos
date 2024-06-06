@@ -1,2 +1,0 @@
-https://github.com/vlastroG/git_fun.git https://gitlab.com/vlastro/git_fun.git
-https://github.com/vlastroG/cfun.git https://gitlab.com/vlastroG/cfun.git
